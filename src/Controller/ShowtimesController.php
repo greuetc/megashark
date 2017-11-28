@@ -40,8 +40,8 @@ class ShowtimesController extends AppController
             'contain' => []
         ]);
         
-        $query = $this->Rooms->showtimes->find();
-        $query -> where([   ])
+        $startDate = new Time();
+        $showtime = $this->Rooms->showtimes->find()-> where ([]);git add 
         
     
         $this->set('showtime', $showtime);

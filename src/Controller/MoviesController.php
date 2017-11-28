@@ -60,6 +60,7 @@ class MoviesController extends AppController
             }
             $this->Flash->error(__('The movie could not be saved. Please, try again.'));
         }
+        
         $this->set(compact('movie'));
         $this->set('_serialize', ['movie']);
     }

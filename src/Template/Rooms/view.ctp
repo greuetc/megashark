@@ -70,6 +70,23 @@
             </tr>
             <?php endforeach; ?>
         </table>
+        <ul>
+        <?php 
+        
+        foreach($showtimes as $Showtimes){
+            echo '<li>';
+            echo" || Date de début : ";
+            echo $Showtimes->start->format('Y-m-d');
+            echo" || Date de fin : ";
+            echo $Showtimes->end->format('Y-m-d');
+            echo '</li>';
+        }
+        
+        ?>
+        </ul>
+
+
+
         <?php endif; ?>
     </div>
 </div>

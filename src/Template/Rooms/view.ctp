@@ -106,17 +106,6 @@
         </tr>
     </table>
     <body>
-    <?php 
-
-            for($i=1;$i <= 7; $i++){
-                
-                if(isset($showtimesThisWeek[$i])){
-                    foreach($showtimesThisWeek[$i]as $showtimes){
-                        echo $showtime->movie->name;
-                    }
-                }
-            }
-    ?>
     </body>
 
 

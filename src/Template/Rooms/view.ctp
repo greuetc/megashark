@@ -70,23 +70,55 @@
             </tr>
             <?php endforeach; ?>
         </table>
-        <ul>
-        <?php 
-        
-        foreach($showtimes as $Showtimes){
-            echo '<li>';
-            echo" || Date de début : ";
-            echo $Showtimes->start->format('Y-m-d');
-            echo" || Date de fin : ";
-            echo $Showtimes->end->format('Y-m-d');
-            echo '</li>';
-        }
-        
-        ?>
-        </ul>
+      
 
 
 
         <?php endif; ?>
     </div>
+      <ul>
+            <?php 
+            
+            foreach($showtimes as $showtime)
+            {
+                echo '<li>';
+                echo "Nom du film : ";
+                echo $showtime->movie->name;
+                echo" || Date de début : ";                
+                echo $showtime->start->format('Y-m-d-H-i');
+                echo" || Date de fin : ";
+                echo $showtime->end->format('Y-m-d-H-i');
+                echo '</li>';
+            }
+            
+            ?>
+        </ul>
+    <h3>Sèance cette semaine </h3>
+    <table cellpadding="0" cellpacing="0">
+        <tr>
+            <th> Lundi </th>
+            <th> Mardi </th>
+            <th> Mercredi </th>
+            <th> Jeudi </th>
+            <th> Vendredi </th>
+            <th> Samedi </th>
+            <th> Dimanche </th>
+        </tr>
+    </table>
+    <body>
+    <?php 
+
+            for($i=1;$i <= 7; $i++){
+                
+                if(isset($showtimesThisWeek[$i])){
+                    foreach($showtimesThisWeek[$i]as $showtimes){
+                        echo $showtime->movie->name;
+                    }
+                }
+            }
+    ?>
+    </body>
+
+
+    
 </div>

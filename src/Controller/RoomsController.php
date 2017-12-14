@@ -43,13 +43,14 @@ class RoomsController extends AppController
         
         
         $startDate = new Time('monday this week');
+        $endDate = new Time('sunday this week');
 
         $showtimes = $this->Rooms->Showtimes
         ->find()
         ->contain(['Movies'])
         ->where(['room_id' => $id])
         ->where(['start >='  => $startDate])
-        ->where(['start >='  => $startDate->modify('+7days')]) ;
+        ->where(['end <'  => $endDate]) ;
         
         $this->set('room', $room);
         $this->set('showtimes',$showtimes);
